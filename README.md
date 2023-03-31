@@ -2,7 +2,7 @@
 
 Parktivity - A website for Montrealers
 
-By Sayem Shah, Hayk Petrosyan, Maxym Galenko and Hussain Amin
+by Sayem Shah, Hayk Petrosyan, Maxym Galenko and Hussain Amin
 
 
 Problem:
