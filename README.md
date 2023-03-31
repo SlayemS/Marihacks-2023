@@ -1,6 +1,7 @@
 # Marihacks-2023
 
-Parktivity -
+Parktivity - A website for Montrealers
+
 By Sayem Shah, Hayk Petrosyan, Maxym Galenko and Hussain Amin
 
 
