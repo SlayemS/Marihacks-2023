@@ -48,4 +48,4 @@ The goal of our web application is to let people inform themselves of what activ
 
 Big Shoutout to Alex Vilvert, Computer Science Technology Coordinator at Vanier College
 
-https://www.linkedin.com/in/alexvilvert/
+His linkedin: https://www.linkedin.com/in/alexvilvert/
