@@ -2,67 +2,7 @@
 <html>
 <head>
 	<title>List and Map Layout</title>
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-		}
-
-		.container {
-			display: flex;
-			flex-direction: row;
-			height: calc(100vh - 10vh);
-		}
-
-		.list {
-			flex: 1;
-			padding: 1rem;
-			background-color: #f0f0f0;
-			overflow-y: auto;
-		}
-
-		.map {
-			flex: 2;
-			height: 100%;
-			border: none;
-		}
-
-		.image {
-			background-image: url("https://babylontours.fr/wp-content/uploads/2019/10/central-park-new-york-walking-tour-1200x726.jpg");
-			background-size: cover;
-			height: 50vh;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			flex-direction: column;
-			color: white;
-		}
-
-		.navbar {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: #333;
-			height: 10vh;
-			color: white;
-			font-size: 1.2rem;
-			width: 100%;
-			/* position: fixed; */
-			bottom: 0;
-			left: 0;
-		}
-
-		.navbar a {
-			color: white;
-			margin: 0 1rem;
-			text-decoration: none;
-		}
-
-		.navbar a:hover {
-			text-decoration: underline;
-            transition: 3s ease;
-		}
-	</style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<div class="image">
@@ -74,15 +14,48 @@
         <a href="#">Help</a>
     </div>
 	<div class="container">
-		<div class="list">
-			<h1>List of Cars</h1>
+		<div class="tab">
+			<button class="tablinks" onclick="openTab(event, 'parks')">Search Parks</button>
+			<button class="tablinks" onclick="openTab(event, 'activities')">Select Activities</button>
+
+		<div id="parks" class="tabcontent">
 			<ul>
-				<li><a href="#">Volvo</a></li>
-				<li><a href="#">BMW</a></li>
-				<li><a href="#">Mercedes</a></li>
+				<li>Mari</li>
+				<li>Longville</li>
+				<li>Mariana</li>
 			</ul>
 		</div>
-		<iframe class="map" width="900" height="600" frameborder="0" src="https://maps.google.com/maps?hl=en&amp;q=1,%20Montreal,%20Canada&amp;output=embed"></iframe>
-	</div>
+
+		<div id="activities" class="tabcontent">
+
+            <div class="list">
+                <ul>
+                    <li>Bolwing</li>
+                    <li>Hockey</li>
+                    <li>walk</li>
+                </ul>
+            </div>
+		</div>
+    </div>
+        
+        <iframe class="map" src="https://maps.google.com/maps?hl=en&amp;q=1,%20Montreal,%20Canada&amp;output=embed" allowfullscreen></iframe>
+        
+        <script>
+            function openTab(evt, tabName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+    </div>
 </body>
 </html>
+        
