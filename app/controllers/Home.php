@@ -3,7 +3,7 @@ namespace app\controllers;
 
 class Home extends \app\core\Controller {
 	
-	public function loadParks() {
+	public function park() {
         if (isset($_POST['activity'])) {
             $park = new \app\models\Park();
             $park->getAllFor($_POST['activity']);
