@@ -1,4 +1,6 @@
-# TO-DO: You need xampp for this (if you don't already have it, download it here https://www.apachefriends.org/download.html) and Follow the steps below:
+# Parktivities - MariHacks 2023
+
+TO-DO: You need xampp for this (if you don't already have it, download it here https://www.apachefriends.org/download.html) and Follow the steps below:
 
 1 - Clone the Marihacks-2023 folder under your /xampp directory
 
@@ -26,6 +28,7 @@
 6 - Now you can use our web application
 
 
+# Project Description
 
 Marihacks-2023
 
