@@ -1,4 +1,33 @@
-# Marihacks-2023
+# TO-DO: You need xampp for this (if you don't already have it, download it here https://www.apachefriends.org/download.html) and Follow the steps below:
+
+1 - Clone the Marihacks-2023 folder under your /xampp directory
+
+2 - To enable vhosts, Go to xampp\apache\conf\extra\httpd-vhosts.conf and append the following to the document:
+
+
+<virtualhost *:80>
+    ServerAdmin webmaster@email.com
+    DocumentRoot "c:/xampp/MariHacks-2023"
+    ServerName MariHacks.localhost
+    ErrorLog "MariHacks.log"
+    CustomLog "MariHacks-access.log" common
+    <directory "c:/xampp/MariHacks-2023">
+        AllowOverride All
+        Require all granted
+    </directory>
+</virtualhost>
+
+3 - Once you save the file, close it and start up xampp
+
+4 - In XAmpp, start apache and mysql
+
+5 - Open your browser and write the following url: Marihacks.localhost
+
+6 - Now you can use our web application
+
+
+
+Marihacks-2023
 
 Parktivity - A website for Montrealers
 
