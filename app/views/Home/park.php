@@ -17,7 +17,6 @@
 
             <div class="list">
                 <ul>
-                    
                     <li>Bolwing</li>
                     <li>Hockey</li>
                     <li>walk</li>
