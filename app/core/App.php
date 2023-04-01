@@ -10,8 +10,8 @@ class App{
 //		var_dump($request);
 
 		//default controller and method
-		$controller = 'Main';
-		$method = 'index';
+		$controller = 'Home';
+		$method = 'park';
 		$params = [];
 
 		//is the requested controller in our controllers folder?
