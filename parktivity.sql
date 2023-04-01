@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2023 at 02:57 AM
+-- Generation Time: Apr 01, 2023 at 04:21 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -32,8 +32,16 @@ USE `parktivity`;
 DROP TABLE IF EXISTS `activity`;
 CREATE TABLE `activity` (
   `activity_id` int(11) NOT NULL,
-  `activity_name` varchar(100) NOT NULL
+  `activity_name` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `activity`
+--
+
+INSERT INTO `activity` (`activity_id`, `activity_name`) VALUES
+(1, 0),
+(2, 0);
 
 -- --------------------------------------------------------
 
@@ -82,9 +90,35 @@ INSERT INTO `park` (`park_id`, `park_name`, `park_address`) VALUES
 
 DROP TABLE IF EXISTS `park_activities`;
 CREATE TABLE `park_activities` (
-  `park_id` int(11) NOT NULL,
-  `activity_name` varchar(100) NOT NULL
+  `activity_id` int(11) NOT NULL,
+  `park_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `park_open_hours`
+--
+
+DROP TABLE IF EXISTS `park_open_hours`;
+CREATE TABLE `park_open_hours` (
+  `open_hours_id` int(11) NOT NULL,
+  `park_id` int(11) NOT NULL,
+  `open_hours_monday` text NOT NULL,
+  `open_hours_tuesday` text NOT NULL,
+  `open_hours_wednesday` text NOT NULL,
+  `open_hours_thursday` text NOT NULL,
+  `open_hours_friday` text NOT NULL,
+  `open_hours_saturday` text NOT NULL,
+  `open_hours_sunday` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `park_open_hours`
+--
+
+INSERT INTO `park_open_hours` (`open_hours_id`, `park_id`, `open_hours_monday`, `open_hours_tuesday`, `open_hours_wednesday`, `open_hours_thursday`, `open_hours_friday`, `open_hours_saturday`, `open_hours_sunday`) VALUES
+(1, 1, '6:00 am to 12:00 am', '6:00 am to 12:00 am', '6:00 am to 12:00 am', '6:00 am to 12:00 am', '6:00 am to 12:00 am', '6:00 am to 12:00 am', '6:00 am to 12:00 am');
 
 --
 -- Indexes for dumped tables
@@ -106,8 +140,15 @@ ALTER TABLE `park`
 -- Indexes for table `park_activities`
 --
 ALTER TABLE `park_activities`
-  ADD PRIMARY KEY (`park_id`,`activity_name`),
-  ADD KEY `activity_to_park_activities` (`activity_name`);
+  ADD PRIMARY KEY (`activity_id`,`park_id`),
+  ADD KEY `park_to_park_activities` (`park_id`);
+
+--
+-- Indexes for table `park_open_hours`
+--
+ALTER TABLE `park_open_hours`
+  ADD PRIMARY KEY (`open_hours_id`),
+  ADD KEY `park_to_park_open_hours` (`park_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -117,13 +158,19 @@ ALTER TABLE `park_activities`
 -- AUTO_INCREMENT for table `activity`
 --
 ALTER TABLE `activity`
-  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `park`
 --
 ALTER TABLE `park`
   MODIFY `park_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `park_open_hours`
+--
+ALTER TABLE `park_open_hours`
+  MODIFY `open_hours_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -133,8 +180,14 @@ ALTER TABLE `park`
 -- Constraints for table `park_activities`
 --
 ALTER TABLE `park_activities`
-  ADD CONSTRAINT `activity_to_park_activities` FOREIGN KEY (`activity_name`) REFERENCES `activity` (`activity_name`),
+  ADD CONSTRAINT `activity_to_park_activities` FOREIGN KEY (`activity_id`) REFERENCES `activity` (`activity_id`),
   ADD CONSTRAINT `park_to_park_activities` FOREIGN KEY (`park_id`) REFERENCES `park` (`park_id`);
+
+--
+-- Constraints for table `park_open_hours`
+--
+ALTER TABLE `park_open_hours`
+  ADD CONSTRAINT `park_to_park_open_hours` FOREIGN KEY (`park_id`) REFERENCES `park` (`park_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
