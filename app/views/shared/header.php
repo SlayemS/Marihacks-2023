@@ -24,7 +24,6 @@
 				      	<?php }
 				      	?>
 		      	</li>
-				<!-- <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li> -->
 			</ul>
 		</div>
 	</header>
