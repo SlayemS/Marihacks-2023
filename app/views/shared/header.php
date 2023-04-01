@@ -9,6 +9,26 @@
 	<title><?= $data ?></title>
 </head>
 <body>
+	<header id="header">
+		<a href="#"><img src="images/logo.png" class="logo" alt=""></a>
+		
+		<div>
+			<ul id="navbar">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li>
+				<?php if (!isset($_SESSION['user_id'])) {?>
+				      		<a href="/User/index"><i class="" title="Log in"></i></a>
+				      	<?php } else { ?>
+				      		<a href="/User/logout"><i class="" title='Log out'></i></a>
+				      	<?php }
+				      	?>
+		      	</li>
+				<!-- <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li> -->
+			</ul>
+		</div>
+	</header>
+
 	<div class="container">
 <?php
 if(isset($_GET['success'])){
@@ -18,6 +38,3 @@ if(isset($_GET['error'])){
 	echo '<div class="alert alert-danger">'.$_GET['error'].'</div>';
 }
 ?>
-		<header>
-			
-		</header>
