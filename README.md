@@ -45,3 +45,7 @@ Have you ever went to a parc and weren't allowed to do a cookout with your frien
 Solution:
 
 The goal of our web application is to let people inform themselves of what activities a parc permits so they can choose the right parc for the activity they want to do without getting told off. In addition, they can chat with others to let them know what they're up to in order to organize events.
+
+Big Shoutout to Alex Vilvert, Computer Science Technology Coordinator at Vanier College
+
+https://www.linkedin.com/in/alexvilvert/
