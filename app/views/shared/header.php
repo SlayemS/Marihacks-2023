@@ -9,17 +9,8 @@
     <meta http-equiv="Expires" content="0">
 	<title><?= $data ?></title>
 </head>
-<body onload="openTab(event, 'parks')">
-	<div class="image">
-		<h1>Welcome to our website</h1>
-	</div>
-    <div class="navbar">
-        <a href="/Home/park">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Help</a>
-    </div>
 
-	<div class="container">
+
 <?php
 if(isset($_GET['success'])){
 	echo '<div class="alert alert-success">'.$_GET['success'].'</div>';
